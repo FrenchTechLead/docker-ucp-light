@@ -23,7 +23,7 @@ public class LogsService extends RestService {
 		log.debug("Downloading logs ...");
 		try {
 			InputStream is = client
-					.resource(c.getServer().getEndpoint() + "/containers/" + c.getId() + "/logs?stdout=true&tail=all")
+					.resource(c.getServer().getEndpoint() + "/containers/" + c.getId() + "/logs?stdout=1&tail=all&stderr=1")
 					.type(MediaType.APPLICATION_JSON)
 					.header(HttpHeaders.AUTHORIZATION, "Bearer " + c.getServer().getAccessToken())
 					.get(InputStream.class);

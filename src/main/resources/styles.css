@@ -3,8 +3,8 @@
 }
 
 .terminal {
-    text-area-background: black ;
-    -fx-text-fill: white;
+    text-area-background: #253341 ;
+    -fx-text-fill: #cfd2d3;
 }
 
 .terminal .content {

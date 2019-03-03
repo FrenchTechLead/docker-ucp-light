@@ -7,6 +7,7 @@ import com.meshredded.docker_ucp_light.utils.Store;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
@@ -40,7 +41,7 @@ public class AddEndpointBtn {
 			GridPane.setConstraints(username, 0, 1);
 			grid.getChildren().add(username);
 
-			final TextField password = new TextField();
+			final PasswordField  password = new PasswordField ();
 			password.setPrefColumnCount(15);
 			password.setPromptText("Password, Ex: dadada");
 			GridPane.setConstraints(password, 0, 2);

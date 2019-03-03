@@ -32,7 +32,8 @@ public class ContainersColumn {
 
 	public static HBox getContainerRow(UcpContainer container, Scene scene) {
 		HBox h = new HBox(10);
-		Label l = new Label(container.getLabels().get("com.docker.stack.namespace"));
+		String stackname = container.getLabels().get("com.docker.stack.namespace");
+		Label l = new Label(stackname);
 
 		CustomButton showInfosBtn = new CustomButton(scene, "Show Infos");
 		showInfosBtn.setOnAction(action -> {
@@ -43,7 +44,7 @@ public class ContainersColumn {
 		showLogsBtn.setOnAction(action -> {
 			App.console.setText("Downloading logs ...");
 			LogsService service = new LogsService();
-			String filename = "log-" + container.getId() + ".log";
+			String filename = stackname + "-" + container.getId().substring(0, 8) + ".log";
 			boolean isDownloadOk = service.downloadLogs(container, filename);
 			if (isDownloadOk) {
 				App.console.setText("Logs downloaded to: " + System.getProperty("user.dir") + "\\" + filename);
