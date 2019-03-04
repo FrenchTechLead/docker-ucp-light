@@ -1,7 +1,9 @@
 package com.meshredded.docker_ucp_light.ui;
 
 import java.io.IOException;
-import org.codehaus.jackson.map.ObjectMapper;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import javafx.scene.control.TextArea;
 
 public class Console extends TextArea {

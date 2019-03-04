@@ -23,8 +23,8 @@ public class LogsService extends RestService {
 		log.debug("Downloading logs ...");
 		try {
 			InputStream is = client
-					.resource(c.getServer().getEndpoint() + "/containers/" + c.getId() + "/logs?stdout=1&tail=all&stderr=1")
-					.accept(MediaType.TEXT_PLAIN)
+					.target(c.getServer().getEndpoint() + "/containers/" + c.getId() + "/logs?stdout=1&tail=all&stderr=1")
+					.request(MediaType.TEXT_PLAIN)
 					.header(HttpHeaders.AUTHORIZATION, "Bearer " + c.getServer().getAccessToken())
 					.get(InputStream.class);
 			BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
