@@ -63,10 +63,10 @@ public class AddEndpointBtn {
 			grid.getChildren().add(errorLabel);
 
 			
-			endpoint.setText("https://ucp.rec");
+			endpoint.setText("https://ucpdmz.dev");
 			username.setText("MECHERI");
 			password.setText("");
-			label.setText("DEV_REC");
+			label.setText("PREPROD");
 			submit.setOnAction(event2 -> {
 				if (isValidInputs(endpoint, username, password, label)) {
 					UcpServer server = new UcpServer(endpoint.getText(), username.getText(), password.getText(),
